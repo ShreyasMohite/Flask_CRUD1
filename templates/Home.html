@@ -1,0 +1,21 @@
+{%extends "Base.html"%} {%block content%}
+<a href="{{url_for('Adduser')}}">
+    <button type="button">
+        Adduser
+    </button>
+</a>
+{%for user in user%}
+<p>{{user.name}}</p>
+
+<p>{{user.email}}</p>
+<a href="{{url_for('delete',id=user.id)}}">
+    <button type="button">
+        delete
+    </button>
+</a>
+<a href="{{url_for('edit',id=user.id)}}">
+    <button type="button">
+        edituser
+    </button>
+</a>
+{%endfor%} {%endblock%}
